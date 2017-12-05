@@ -14,7 +14,7 @@ public class Paddle : MonoBehaviour {
 
        // print(Input.mousePosition.x);
 
-        float mousePosInUnits = (Input.mousePosition.x / Screen.width * 16) - 8;
+        float mousePosInUnits = (Input.mousePosition.x / Screen.width * 16);
 
         Vector3 newPaddlePos = new Vector3(mousePosInUnits, this.transform.position.y,
                                                 this.transform.position.z);
