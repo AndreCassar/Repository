@@ -11,21 +11,21 @@ public class Player2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Vector3 position = this.transform.position;
-            position.y++;
             if (position.y < 4.33f)
             {
+                position.y = position.y + 0.33f;
                 this.transform.position = position;
             }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             Vector3 position = this.transform.position;
-            position.y = position.y - 1.5f;
-            if (position.y > -4.33f)
-            {
+            if(position.y > -4.33f)
+            { 
+                position.y = position.y - 0.33f;
                 this.transform.position = position;
             }
         }

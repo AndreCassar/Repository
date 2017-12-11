@@ -39,7 +39,9 @@ public class Ball : MonoBehaviour {
     {
         string colName = collision.collider.name;
         string colTag = collision.collider.tag;
-        //if (gameStarted && (colName == "Paddle" || colName == "Left Border" || colName == "Right Border")) // if(gameStarted == true)
+        if(colName == "Goal Post" || colName == "Goal Post2")
+        {
+        }
         if(gameStarted && (colTag != "Breakable"))
         {
             GetComponent<AudioSource>().PlayOneShot(boing);
