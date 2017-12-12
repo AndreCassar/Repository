@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
-    //LevelManager levelManager = new LevelManager();
-    /*public Text Score;
-    public Text score_02;
-    public static int score = 0;
-    public static int score2 = 0;*/
+    LevelManager levelManager = new LevelManager();
     public static int score1 = 0;
     public static int score2 = 0;
     Player1 player;
@@ -43,26 +39,28 @@ public class Ball : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector3 originalPos = new Vector3(0, 0, -5);
         string colName = collision.collider.name;
         if(colName == "Goal Post")
         {
-            Vector3 originalPos = new Vector3(0, 0, -5);
-            print("GOAL!!!!!!");
             score2++;
-            if(score2 >= 2)
+            if(score2 >= 5)
             {
-                print("WE ARE HERE!!!");
-                SceneManager.LoadScene("Level_02");
-            }
-
+                levelManager.LoadNewScene("Level_02");
+                score1 = 0;
+                score2 = 0;            }
             this.transform.position = originalPos;
-            //UImanag
         }
         if(colName == "Goal Post2")
         {
-            print("GOAL for 2!!!!!!");
             score1++;
-            //score2++;
+            if (score1 >= 5)
+            {
+                levelManager.LoadNewScene("Level_02");
+                score1 = 0;
+                score2 = 0;
+            }
+            this.transform.position = originalPos;
         }
     }
 }
