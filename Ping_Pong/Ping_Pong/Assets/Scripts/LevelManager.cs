@@ -9,4 +9,12 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void LoadNextScene()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene++;
+        SceneManager.LoadScene(currentScene);
+        Ball.maxScore = Ball.maxScore + 2;
+        
+    }
 }
