@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Ping_Pong.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UImanager.cs">
     <Files>
       <File FileName="Assets\Scripts\Player1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UImanager.cs" Line="18" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

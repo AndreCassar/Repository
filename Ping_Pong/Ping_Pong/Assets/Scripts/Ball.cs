@@ -7,7 +7,9 @@ public class Ball : MonoBehaviour {
     LevelManager levelManager = new LevelManager();
     public static int score1 = 0;
     public static int score2 = 0;
-    public static int maxScore = 5;
+    public static int finalScore1 = 0;
+    public static int finalScore2 = 0;
+    public static int maxScore = 6;
     Player1 player;
     Player2 player2;
     Vector3 player2BallPosDiff;
@@ -20,8 +22,6 @@ public class Ball : MonoBehaviour {
         player = GameObject.FindObjectOfType<Player1>();
         player2 = GameObject.FindObjectOfType<Player2>();
         player2BallPosDiff = this.transform.position - player2.transform.position;
-        //score_01 = GetComponent<Text> ();
-        //score_02 = GetComponent<Text>();
 
     }
     void Update()
@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour {
         string colName = collision.collider.name;
         if(colName == "Goal Post")
         {
-            score2++;
+            score2 = score2 + levelManager.GetIndex();
             if(score2 >= maxScore)
             {
                 levelManager.LoadNextScene();
@@ -55,7 +55,7 @@ public class Ball : MonoBehaviour {
         }
         if(colName == "Goal Post2")
         {
-            score1++;
+            score1 = score1 + levelManager.GetIndex();
             if (score1 >= maxScore)
             {
                 levelManager.LoadNextScene();

@@ -23,4 +23,9 @@ public class LevelManager : MonoBehaviour {
         currentScene++;
         SceneManager.LoadScene(currentScene);
     }
+    public int GetIndex()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        return index;
+    }
 }
